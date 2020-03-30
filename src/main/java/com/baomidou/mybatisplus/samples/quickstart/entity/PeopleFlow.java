@@ -1,9 +1,7 @@
 package com.baomidou.mybatisplus.samples.quickstart.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -37,5 +35,9 @@ public class PeopleFlow implements Serializable {
 
     private Integer value;
 
+    @TableLogic
+    private Integer deleted=0;
 
+    @Version
+    private Integer version;
 }

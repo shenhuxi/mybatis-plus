@@ -1,10 +1,7 @@
 package com.baomidou.mybatisplus.samples.quickstart.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.samples.quickstart.enumutil.AgeEnum;
-import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Data;
 
 @Data
@@ -14,8 +11,9 @@ public class User {
     private Long id;
     private String name;
 
-
     private AgeEnum age;
+
+    @TableField(fill = FieldFill.INSERT_UPDATE,update = "CONCAT(%s,'*')")
     private String email;
 
     @TableLogic

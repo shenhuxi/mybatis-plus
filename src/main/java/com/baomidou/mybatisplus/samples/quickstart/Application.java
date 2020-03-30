@@ -40,7 +40,7 @@ public class Application {
     public String test(){
         User user = userService.getById(1);
         //插入
-        userMapper.insert(user);
+       //userMapper.insert(user);
 
         //查询
         System.out.println(user);
@@ -93,6 +93,8 @@ public class Application {
         user.setName("麻子");
         userService.save(user);
         userService.removeById(user.getId());
+
+        System.out.println(userService.getById(user.getId()));
         return one;
     }
 
