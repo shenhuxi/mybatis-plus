@@ -39,5 +39,5 @@ public class PeopleFlow implements Serializable {
     private Integer deleted=0;
 
     @Version
-    private Integer version;
+    private Integer version=0;
 }
